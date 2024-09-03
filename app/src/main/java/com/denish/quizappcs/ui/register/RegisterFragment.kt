@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -32,21 +33,24 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         }
 
         binding?.run {
-            btnRegister.setOnClickListener {
-                val selectedRoleString = etRole.selectedItem.toString()
 
-                val selectedRole = when (selectedRoleString) {
-                    "Teacher" -> Role.TEACHER
-                    "Student" -> Role.STUDENT
-                    else -> Role.STUDENT
-                }
+            val role = ArrayAdapter.createFromResource(
+                requireContext(),
+                R.array.role_options,
+                android.R.layout.simple_spinner_item
+            )
+
+            role.setDropDownViewResource(android.R.layout.simple_spinner_item)
+            etRole.adapter = role
+
+            btnRegister.setOnClickListener {
                 viewModel.createUser(
                     firstName = etFirstName.text.toString(),
                     lastName = etLastName.text.toString(),
                     email = etEmail.text.toString(),
                     pass = etPass.text.toString(),
                     confirmPass = etConfirmPass.text.toString(),
-                    role = selectedRole
+                    role = etRole.selectedItem.toString()
                 )
             }
         }
@@ -58,7 +62,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         lifecycleScope.launch {
             viewModel.success.collect{
                 findNavController().navigate(
-                    RegisterFragmentDirections.actionRegisterFragmentToHomeFragment()
+                    RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
                 )
             }
         }

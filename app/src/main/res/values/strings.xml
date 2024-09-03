@@ -2,9 +2,57 @@
     <string name="app_name">QuizApp(CS)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">
+        Quiz Master is an engaging and educational app designed to test your knowledge across a wide range of topics. Whether you are a trivia enthusiast, a student preparing for exams, or someone who enjoys learning new facts, Quiz Master offers a fun way to challenge yourself and improve your skills.
+    </string>
+    <string name="quizUpdateFailed">Failed to update quiz. Please try again."</string>
+    <string name="quizUpdateSuccess">Quiz updated successfully!</string>
+    <string name="selectedFile">
+        CSV file uploaded with ${questions.size} questions
+    </string>
+    <string name="editQuestion">Edit Question</string>
+    <string name="saveEdit">Save Edit</string>
+    <string name="about_page">About Page</string>
+    <string name="upload_your_csv_file_above">Upload your CSV file above</string>
+    <string name="quiz_name">Quiz Name</string>
+    <string name="welcome_to_teacher_s_dashboard">Welcome to Teacher\'s DashBoard</string>
+    <string name="quiz_title">Quiz Title</string>
+    <string name="quiz_description">Quiz Description</string>
+    <string name="quiz_id">Quiz ID</string>
+    <string name="file_description">File Description</string>
+    <string name="add_quiz">Add Quiz</string>
+    <string name="quiz_question">Quiz Question</string>
+    <string name="quiz_options">Quiz Options</string>
+    <string name="correct_answer">Correct Answer</string>
+    <string name="student_s_quip_app">Student\'s Quip App</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="add_question">Add Question</string>
+    <string name="enter_quiz_id">Enter Quiz ID</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="time_left_30_seconds">Time left: 30 seconds</string>
+    <string name="question">Question</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="option_4">Option 4</string>
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="rank_or_question">Rank Or Question</string>
+    <string name="ranking">Ranking</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email">Email</string>
+    <string name="student_name">Student Name</string>
+    <string name="marks">Marks</string>
+    <string name="quizNotFound">Quiz not found</string>
 
     <string-array name="role_options">
-        <item>Student</item>
-        <item>Teacher</item>
+        <item>TEACHER</item>
+        <item>STUDENT</item>
     </string-array>
 </resources>

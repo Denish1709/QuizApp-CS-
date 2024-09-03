@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+            <EditText
+                android:id="@+id/et_access_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xxxl"
+                android:layout_marginEnd="@dimen/xxxl"
+                android:padding="@dimen/m"
+                android:background="@drawable/input_box"
+                android:hint="@string/enter_quiz_id" />
+
+            <Button
+                android:id="@+id/btn_start_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxl"
+                android:text="@string/start_quiz" />
+
+
+
+    </LinearLayout></layout>

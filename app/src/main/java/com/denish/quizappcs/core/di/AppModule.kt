@@ -18,10 +18,4 @@ class AppModule {
     fun provideAuthService(@ApplicationContext context: Context): AuthService {
         return AuthService(context = context)
     }
-
-//    @Provides
-//    @Singleton
-//    fun provideStorageService(authService: AuthService) {
-//        return StorageSer
-//    }
 }

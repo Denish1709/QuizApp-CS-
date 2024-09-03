@@ -9,11 +9,31 @@
         android:gravity="center"
         tools:context=".ui.register.RegisterFragment">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/l"
+            android:textSize="@dimen/l"
+            android:textStyle="bold"
+            android:text="@string/sign_up" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_marginHorizontal="@dimen/m"
+            android:paddingVertical="@dimen/s"
+            android:paddingStart="@dimen/xs"
+            android:paddingEnd="@dimen/xs"
+            android:gravity="center">
+
         <EditText
             android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First Name"
+            android:hint="@string/first_name"
             android:layout_marginStart="@dimen/s"
             android:layout_marginEnd="@dimen/m"
             android:layout_marginTop="@dimen/m"
@@ -24,7 +44,7 @@
             android:id="@+id/etLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last Name"
+            android:hint="@string/last_name"
             android:layout_marginStart="@dimen/s"
             android:layout_marginEnd="@dimen/m"
             android:layout_marginTop="@dimen/m"
@@ -35,7 +55,7 @@
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:layout_marginStart="@dimen/s"
             android:layout_marginEnd="@dimen/m"
             android:layout_marginTop="@dimen/m"
@@ -51,7 +71,7 @@
             android:layout_marginTop="@dimen/m"
             android:padding="@dimen/s"
             android:background="@drawable/input_box"
-            android:hint="Password"/>
+            android:hint="@string/password"/>
 
         <EditText
             android:id="@+id/etConfirmPass"
@@ -62,7 +82,7 @@
             android:layout_marginTop="@dimen/m"
             android:padding="@dimen/s"
             android:background="@drawable/input_box"
-            android:hint="Confirm Password"/>
+            android:hint="@string/confirm_password"/>
 
         <Spinner
             android:id="@+id/etRole"
@@ -83,12 +103,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/xs"
             android:layout_marginEnd="@dimen/m"
-            android:layout_marginTop="@dimen/m"
+            android:layout_marginTop="@dimen/l"
             android:padding="@dimen/xs"
-            android:text="Register"
+            android:text="@string/register"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:minHeight="36dp"
             app:cornerRadius="20dp"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>

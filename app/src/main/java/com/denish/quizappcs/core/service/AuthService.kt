@@ -10,7 +10,6 @@ class AuthService(
     private val context: Context
 ) {
     private val auth = FirebaseAuth.getInstance()
-    private val credentialManager = CredentialManager.create(context)
 
     suspend fun createUserWithEmailAndPass(email: String, pass: String): Boolean {
         val res = auth.createUserWithEmailAndPassword(

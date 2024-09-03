@@ -7,6 +7,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.denish.quizappcs.R
 import com.denish.quizappcs.data.model.user.Role
+import com.denish.quizappcs.data.model.user.User
+import com.denish.quizappcs.data.repo.UserRepo
 import com.denish.quizappcs.databinding.FragmentLoginBinding
 import com.denish.quizappcs.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,16 +39,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun onBindData(view: View) {
         super.onBindData(view)
         lifecycleScope.launch {
-            viewModel.success.collect{
-//                if (Role == Role.STUDENT) {
-//                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-//                }
-
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-
-//                if (Role == Role.STUDENT) {
-//                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-//                }
+            viewModel.success.collect {role ->
+                when(role) {
+                    Role.TEACHER -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToDashBoardFragment())
+                    Role.STUDENT -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                }
             }
         }
     }

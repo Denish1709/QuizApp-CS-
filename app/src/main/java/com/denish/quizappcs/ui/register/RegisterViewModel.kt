@@ -20,15 +20,13 @@ class RegisterViewModel @Inject constructor(
     private val userRepo: UserRepo
 ): BaseViewModel() {
 
-    val success: MutableSharedFlow<Unit> = MutableSharedFlow()
-
     fun createUser(
         firstName: String,
         lastName: String,
         email: String,
         pass: String,
         confirmPass: String,
-        role: Role
+        role: String
 
     ) {
         val error = ValidationUtil.validate(
@@ -38,6 +36,8 @@ class RegisterViewModel @Inject constructor(
             Field(pass, "[a-zA-Z0-9#$%]{3,20}", "Enter a valid password")
         )
 
+        val selectedRole = Role.valueOf(role)
+
         if (error == null) {
             viewModelScope.launch(Dispatchers.IO) {
                 errorHandler {
@@ -45,9 +45,9 @@ class RegisterViewModel @Inject constructor(
                     authService.createUserWithEmailAndPass(email, pass)
                 }?.let {
                     userRepo.createUser(
-                        User(firstName, lastName, email)
+                        User(firstName, lastName, email, selectedRole)
                     )
-                    success.emit(Unit)
+                    _success.emit(selectedRole)
                 }
             }
         } else {

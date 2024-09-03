@@ -15,7 +15,7 @@ class LoginViewModel @Inject constructor(
     private val authService: AuthService,
     private val userRepo: UserRepo
 ): BaseViewModel() {
-    val success: MutableSharedFlow<Unit> = MutableSharedFlow()
+//    val success: MutableSharedFlow<Unit> = MutableSharedFlow()
 
     fun login(email: String, pass: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -23,7 +23,10 @@ class LoginViewModel @Inject constructor(
                 validate(email, pass)
                 authService.loginWithEmailAndPass(email, pass)
             }?.let {
-                success.emit(Unit)
+                val user = userRepo.getUser()
+                user?.let {
+                    _success.emit(it.role)
+                }
             }
         }
     }

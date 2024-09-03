@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.teacher.add.AddQuestionFragment">
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_question"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/m"
+            android:textSize="@dimen/xxl"
+            android:textStyle="bold"/>
+
+
+        <ImageButton
+            android:id="@+id/etUploadCSV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/l"
+            android:layout_marginBottom="@dimen/l"
+            android:src="@drawable/upload"/>
+
+        <TextView
+            android:id="@+id/etTextSelectedFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_your_csv_file_above"
+            android:gravity="center"/>
+
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz_title"
+            android:background="@drawable/input_box"
+            android:padding="@dimen/m"
+            android:layout_marginStart="@dimen/xl"
+            android:layout_marginEnd="@dimen/xl"
+            android:layout_marginTop="@dimen/xl"
+            android:layout_marginBottom="@dimen/xl"/>
+
+        <EditText
+            android:id="@+id/etAccessCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz_id"
+            android:background="@drawable/input_box"
+            android:padding="@dimen/m"
+            android:layout_marginStart="@dimen/xl"
+            android:layout_marginEnd="@dimen/xl"/>
+
+        <EditText
+            android:id="@+id/etDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/file_description"
+            android:padding="@dimen/xxl"
+            android:gravity="center"
+            android:background="@drawable/input_box"
+            android:layout_marginTop="@dimen/xl"
+            android:layout_marginStart="@dimen/xl"
+            android:layout_marginEnd="@dimen/xl"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs"
+            android:layout_marginEnd="@dimen/m"
+            android:layout_marginTop="@dimen/xl"
+            android:padding="@dimen/xs"
+            android:text="@string/add_quiz"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="36dp"
+            app:cornerRadius="20dp"/>
+
+    </LinearLayout>
+
+</layout>

@@ -2,6 +2,7 @@ package com.denish.quizappcs.data.repo
 
 import com.denish.quizappcs.data.model.user.User
 import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.firestore
@@ -27,7 +28,4 @@ class UserRepo {
         return res.data?.let { User.fromMap(it) }
     }
 
-    suspend fun updateUser(user: User) {
-        getUserCollRef().document(getUid()).set(user).await()
-    }
 }

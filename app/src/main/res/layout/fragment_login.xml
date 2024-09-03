@@ -27,7 +27,7 @@
             android:padding="@dimen/s"
             android:background="@drawable/input_box"
             android:inputType="textEmailAddress"
-            android:hint="Enter Email"/>
+            android:hint="@string/enter_email"/>
 
         <EditText
             android:id="@+id/etPass"
@@ -38,7 +38,7 @@
             android:layout_marginTop="@dimen/m"
             android:padding="@dimen/s"
             android:background="@drawable/input_box"
-            android:hint="Password"/>
+            android:hint="@string/password"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
@@ -48,7 +48,7 @@
             android:layout_marginEnd="@dimen/m"
             android:layout_marginTop="@dimen/m"
             android:padding="@dimen/xs"
-            android:text="Login"
+            android:text="@string/login"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:minHeight="36dp"
@@ -61,7 +61,7 @@
             android:layout_marginTop="32sp"
             android:backgroundTint="#0000"
             android:textColor="@color/cyan"
-            android:text="Register"
+            android:text="@string/register"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:minHeight="36dp"
